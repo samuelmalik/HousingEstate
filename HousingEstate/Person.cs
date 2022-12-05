@@ -26,10 +26,10 @@ namespace HousingEstate
             this.age = age;
         }
 
-        // ToString method
+        // ToString() method
         public override string ToString()
         {
-            return String.Format($"My name is {this.name} {this.surname} and I am {this.age} years old");
+            return String.Format($"My name is {this.name} {this.surname} and I am {this.age} years old.");
         }
     }
 }
