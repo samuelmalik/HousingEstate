@@ -29,6 +29,13 @@ namespace HousingEstate
             this.roomsNumber = Math.Abs(roomsNumber);
         }
 
+        // methods
+        
+        public void AddHabitant(Person habitant)
+        {
+            inhabitants.Add(habitant);
+        }
+
         // ToString() method
         public override string ToString()
         {
