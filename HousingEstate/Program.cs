@@ -16,14 +16,13 @@ namespace HousingEstate
             Person person2 = new Person("Neolivr", "AntiKrška", 12);
             Person person3 = new Person("Antioliver", "Nekrška", 25);
 
-            flat1.AddHabitant(person1);
-            flat1.AddHabitant(person2);
-            flat1.AddHabitant(person3);
+            flat1.AddInhabitant(person1);
+            flat1.AddInhabitant(person2);
+            flat1.AddInhabitant(person3);
 
-            foreach (var person in flat1.inhabitants)
-            {
-                Console.WriteLine(person.ToString());
-            }
+            Console.WriteLine(flat1.GetInfoAboutAllInhabitants());
+
+            
 
         }
     }

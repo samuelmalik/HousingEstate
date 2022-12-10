@@ -31,9 +31,19 @@ namespace HousingEstate
 
         // methods
         
-        public void AddHabitant(Person habitant)
+        public void AddInhabitant(Person habitant)
         {
             inhabitants.Add(habitant);
+        }
+
+        public string GetInfoAboutAllInhabitants()
+        {
+            string info = "";
+            foreach (var person in this.inhabitants)
+            {
+               info = info + person.ToString() + "\n";
+            }
+            return info;
         }
 
         // ToString() method
