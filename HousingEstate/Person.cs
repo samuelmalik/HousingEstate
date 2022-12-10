@@ -12,6 +12,7 @@ namespace HousingEstate
         private string name;
         private string surname;
         private int age;
+        private Flat currentFlat;
 
         // method converting first letter to upper
         private string CapitalizeFirstLetter(string word)
@@ -23,6 +24,7 @@ namespace HousingEstate
         public string Name { get { return name; } set { name = CapitalizeFirstLetter(value); } }
         public string Surname { get { return surname; } set { surname = CapitalizeFirstLetter(value); } }
         public int Age { get { return age; } set { age = Math.Abs(value); } }
+        public Flat CurrentFlat { get { return currentFlat; } set { currentFlat = value; } }
 
         // constructor
         public Person(string name, string surname, int age)
@@ -31,6 +33,16 @@ namespace HousingEstate
             this.surname = CapitalizeFirstLetter(surname);
             this.age = Math.Abs(age);
         }
+
+        // methods
+
+        // method for getting info about flat
+        public string GetInfoAboutFlat()
+        {
+
+            return this.currentFlat.ToString();
+        }
+
 
         // ToString() method
         public override string ToString()

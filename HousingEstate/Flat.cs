@@ -31,25 +31,28 @@ namespace HousingEstate
 
         // methods
         
+        // method for adding habitatnts
         public void AddInhabitant(Person habitant)
         {
             inhabitants.Add(habitant);
+            habitant.CurrentFlat = this;
         }
 
+        // method for getting info about all habitants
         public string GetInfoAboutAllInhabitants()
         {
-            string info = "";
+            string info = String.Empty;
             foreach (var person in this.inhabitants)
             {
-               info = info + person.ToString() + "\n";
+               info += person + "\n";
             }
-            return info;
+            return info.Substring(0, info.Length - 1);
         }
 
         // ToString() method
         public override string ToString()
         {
-            return String.Format($"This is flat number {this.number} with {this.roomsNumber} rooms and total area of {this.area} square meters.");
+            return String.Format($"Flat number {this.number} with {this.roomsNumber} rooms and total area of {this.area} square meters.");
         }
 
     }
