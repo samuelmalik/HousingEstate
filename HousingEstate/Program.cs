@@ -11,19 +11,26 @@ namespace HousingEstate
     {
         static void Main(string[] args)
         {
-            Flat flat1 = new Flat(34, 2);
-            Flat flat2 = new Flat(52, 3);
-            Flat flat3 = new Flat(78, 3);
+            // create housing estate
+            HousingEstate he1 = new HousingEstate("Lunik IX");
 
-            Habitant person1 = new Habitant("Oliver", "Krška", 54, flat1);
-            Habitant person2 = new Habitant("Neolivr", "AntiKrška", 12, flat1);
-            Habitant person3 = new Habitant("Antioliver", "Nekrška", 25, flat2);
-            Person cleaner = new Person("Pavel", "Virdzek", 74);
+            // create blocks of flats
+            BlockOfFlats bof1 = new BlockOfFlats(he1, 14);
+            BlockOfFlats bof2 = new BlockOfFlats(he1, 15);
+
+            // create entrances
 
 
-            Console.WriteLine(Flat.GetInfoAboutAllFlats());
-            Console.WriteLine(Person.GetInfoAboutAllPeople());
-            Console.WriteLine(Person.GetInfoAboutAllNonHabitants());
+            // create flats
+
+            
+
+            // create people
+
+            // add people to flats
+
+            // MENU
+
 
             // function returning someething like tree structure of all flats and habitants (later can be implemented in Flat class)
             //foreach (var item in Flat.allFlats)
