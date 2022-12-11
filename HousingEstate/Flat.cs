@@ -10,6 +10,9 @@ namespace HousingEstate
     {
         // STATIC MEMBERS
 
+        // field for automatically setting flat number
+        private static int currentNumber = 0;
+
         // list of all existing flats
         public static List<Flat> allFlats = new List<Flat>();
 
@@ -36,14 +39,14 @@ namespace HousingEstate
         public List<Person> inhabitants = new List<Person>();
 
         // properties
-        public int Number { get { return number; } set { number = Math.Abs(value); } }
+        public int Number { get { return number; } }
         public int Area { get { return area; } set { area = Math.Abs(value); } }
         public int RomsNumber { get { return roomsNumber; } set { roomsNumber = Math.Abs(value); } }
 
         // constructor
-        public Flat(int number, int area, int roomsNumber)
+        public Flat(int area, int roomsNumber)
         {
-            this.number = Math.Abs(number);
+            this.number = ++currentNumber;
             this.area = Math.Abs(area);
             this.roomsNumber = Math.Abs(roomsNumber);
             Flat.allFlats.Add(this);
