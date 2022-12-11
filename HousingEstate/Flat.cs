@@ -55,14 +55,14 @@ namespace HousingEstate
         // methods
         
         // method for adding habitatnts
-        public void AddInhabitant(Person habitant)
+        public void AddHabitant(Habitant habitant)
         {
             inhabitants.Add(habitant);
-            habitant.CurrentFlat = this;
+            habitant.Flat = this;
         }
 
         // method for getting info about all habitants
-        public string GetInfoAboutAllInhabitants()
+        public string GetInfoAboutAllHabitants()
         {
             string info = String.Empty;
             foreach (var person in this.inhabitants)

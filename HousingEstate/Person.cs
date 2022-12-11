@@ -10,6 +10,9 @@ namespace HousingEstate
     {
         // STATIC MEMBERS
 
+        // list of people not living here
+        public static List<Person> nonHabitants = new List<Person>();
+
         // list of all existing people
         public static List<Person> allPeople = new List<Person>();
 
@@ -24,26 +27,44 @@ namespace HousingEstate
             return info.Substring(0, info.Length - 1);
         }
 
+        // method for getting info about all people that are not living here
+        public static string GetInfoAboutAllNonHabitants()
+        {
+            string info = String.Empty;
+            foreach (var person in Person.nonHabitants)
+            {
+                info += person + "\n";
+            }
+            return info.Substring(0, info.Length - 1);
+        }
+
 
         // CLASS MEMBERS
 
         // method converting first letter to upper
-        private string CapitalizeFirstLetter(string word)
+        protected string CapitalizeFirstLetter(string word)
         {
             return char.ToUpper(word[0]) + word.Substring(1).ToLower();
         }
 
         // fields
-        private string name;
-        private string surname;
-        private int age;
-        private Flat currentFlat;
+        protected string name;
+        protected string surname;
+        protected int age;
+        
 
         // properties
         public string Name { get { return name; } set { name = CapitalizeFirstLetter(value); } }
         public string Surname { get { return surname; } set { surname = CapitalizeFirstLetter(value); } }
         public int Age { get { return age; } set { age = Math.Abs(value); } }
-        public Flat CurrentFlat { get { return currentFlat; } set { currentFlat = value; } }
+
+        // base constructor
+        public Person()
+        {
+            this.name = "Name";
+            this.surname = "Surname";
+            this.age = 18;
+        }
 
         // constructor
         public Person(string name, string surname, int age)
@@ -52,22 +73,14 @@ namespace HousingEstate
             this.surname = CapitalizeFirstLetter(surname);
             this.age = Math.Abs(age);
             Person.allPeople.Add(this);
-        }
-
-        // methods
-
-        // method for getting info about flat
-        public string GetInfoAboutFlat()
-        {
-
-            return this.currentFlat.ToString();
+            Person.nonHabitants.Add(this);
         }
 
 
         // ToString() method
         public override string ToString()
         {
-            return String.Format($"{this.name} {this.surname}, {this.age} years old.");
+            return String.Format($"{this.name} {this.surname}, {this.age} years old, not living here");
         }
     }
 }
