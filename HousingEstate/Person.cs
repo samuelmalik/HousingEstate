@@ -8,17 +8,36 @@ namespace HousingEstate
 {
     internal class Person
     {
-        // fields
-        private string name;
-        private string surname;
-        private int age;
-        private Flat currentFlat;
+        // STATIC MEMBERS
+
+        // list of all existing people
+        public static List<Person> allPeople = new List<Person>();
+
+        // method for getting info about all existing people
+        public static string GetInfoAboutAllPeople()
+        {
+            string info = String.Empty;
+            foreach (var person in Person.allPeople)
+            {
+                info += person + "\n";
+            }
+            return info.Substring(0, info.Length - 1);
+        }
+
+
+        // CLASS MEMBERS
 
         // method converting first letter to upper
         private string CapitalizeFirstLetter(string word)
         {
             return char.ToUpper(word[0]) + word.Substring(1).ToLower();
         }
+
+        // fields
+        private string name;
+        private string surname;
+        private int age;
+        private Flat currentFlat;
 
         // properties
         public string Name { get { return name; } set { name = CapitalizeFirstLetter(value); } }
@@ -32,6 +51,7 @@ namespace HousingEstate
             this.name = CapitalizeFirstLetter(name);
             this.surname = CapitalizeFirstLetter(surname);
             this.age = Math.Abs(age);
+            Person.allPeople.Add(this);
         }
 
         // methods
@@ -47,7 +67,7 @@ namespace HousingEstate
         // ToString() method
         public override string ToString()
         {
-            return String.Format($"My name is {this.name} {this.surname} and I am {this.age} years old.");
+            return String.Format($"{this.name} {this.surname}, {this.age} years old.");
         }
     }
 }

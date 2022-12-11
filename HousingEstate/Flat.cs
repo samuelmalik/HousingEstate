@@ -8,6 +8,25 @@ namespace HousingEstate
 {
     internal class Flat
     {
+        // STATIC MEMBERS
+
+        // list of all existing flats
+        public static List<Flat> allFlats = new List<Flat>();
+
+        // method for getting info about all existing flats
+        public static string GetInfoAboutAllFlats()
+        {
+            string info = String.Empty;
+            foreach (var flat in Flat.allFlats)
+            {
+                info += flat + "\n";
+            }
+            return info.Substring(0, info.Length - 1);
+        }
+
+
+        // CLASS MEMBERS
+
         // fields
         private int number;
         private int area;
@@ -27,6 +46,7 @@ namespace HousingEstate
             this.number = Math.Abs(number);
             this.area = Math.Abs(area);
             this.roomsNumber = Math.Abs(roomsNumber);
+            Flat.allFlats.Add(this);
         }
 
         // methods
@@ -44,7 +64,7 @@ namespace HousingEstate
             string info = String.Empty;
             foreach (var person in this.inhabitants)
             {
-               info += person + "\n";
+               info += "\t" + person + "\n";
             }
             return info.Substring(0, info.Length - 1);
         }

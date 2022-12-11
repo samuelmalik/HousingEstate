@@ -21,13 +21,15 @@ namespace HousingEstate
             flat1.AddInhabitant(person2);
             flat2.AddInhabitant(person3);
 
-            Console.WriteLine(flat1.GetInfoAboutAllInhabitants());
-            Console.WriteLine(flat2.GetInfoAboutAllInhabitants());
+            // Console.WriteLine(Flat.GetInfoAboutAllFlats());
+            // Console.WriteLine(Person.GetInfoAboutAllPeople());
 
-            Console.WriteLine(person1.GetInfoAboutFlat());
-            Console.WriteLine(person2.GetInfoAboutFlat());
-            Console.WriteLine(person3.GetInfoAboutFlat());
-
+            // function returning someething like tree structure of all flats and habitants (later can be implemented in Flat class)
+            //foreach (var item in Flat.allFlats)
+            //{
+            //    Console.WriteLine(item);
+            //    Console.WriteLine(item.GetInfoAboutAllInhabitants());
+            //}
 
 
         }
