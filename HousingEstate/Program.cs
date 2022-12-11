@@ -15,14 +15,11 @@ namespace HousingEstate
             Flat flat2 = new Flat(52, 3);
             Flat flat3 = new Flat(78, 3);
 
-            Habitant person1 = new Habitant("Oliver", "Krška", 54);
-            Habitant person2 = new Habitant("Neolivr", "AntiKrška", 12);
-            Habitant person3 = new Habitant("Antioliver", "Nekrška", 25);
+            Habitant person1 = new Habitant("Oliver", "Krška", 54, flat1);
+            Habitant person2 = new Habitant("Neolivr", "AntiKrška", 12, flat1);
+            Habitant person3 = new Habitant("Antioliver", "Nekrška", 25, flat2);
             Person cleaner = new Person("Pavel", "Virdzek", 74);
 
-            flat1.AddHabitant(person1);
-            flat1.AddHabitant(person2);
-            flat2.AddHabitant(person3);
 
             Console.WriteLine(Flat.GetInfoAboutAllFlats());
             Console.WriteLine(Person.GetInfoAboutAllPeople());

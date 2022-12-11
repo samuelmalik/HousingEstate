@@ -18,11 +18,12 @@ namespace HousingEstate
         // base constructor
 
         // constructor
-        public Habitant(string name, string surname, int age)
+        public Habitant(string name, string surname, int age,Flat flat)
         {
             this.name = CapitalizeFirstLetter(name);
             this.surname = CapitalizeFirstLetter(surname);
             this.age = Math.Abs(age);
+            this.flat = flat;
             Person.allPeople.Add(this);
         }
 
