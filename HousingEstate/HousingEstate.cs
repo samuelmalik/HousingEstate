@@ -9,7 +9,7 @@ namespace HousingEstate
     internal class HousingEstate
     {
         // list of all blocks of flats
-        public List<BlockOfFlats> allBlocksOfFlats = new List<BlockOfFlats>();
+        public List<BlockOfFlats> blocksOfFlats = new List<BlockOfFlats>();
  
         // properties
         public string Name { get; set; }

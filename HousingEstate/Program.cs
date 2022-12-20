@@ -14,11 +14,17 @@ namespace HousingEstate
             // create housing estate
             HousingEstate he1 = new HousingEstate("Lunik IX");
 
-            // create blocks of flats
-            BlockOfFlats bof1 = new BlockOfFlats(he1, 14);
-            BlockOfFlats bof2 = new BlockOfFlats(he1, 15);
+            // create blocks of flats and entrances
+            BlockOfFlats bof1 = new BlockOfFlats(he1, 1, "Jurčova", 12);
+            he1.blocksOfFlats.Add(bof1);
+            BlockOfFlats bof2 = new BlockOfFlats(he1, 2, "Richardova", 15);
+            he1.blocksOfFlats.Add(bof2);
 
-            // create entrances
+
+            foreach (var entrance in bof1.entrances)
+            {
+                Console.WriteLine(entrance); 
+            }
 
 
             // create flats

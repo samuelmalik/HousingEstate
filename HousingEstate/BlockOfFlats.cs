@@ -10,14 +10,37 @@ namespace HousingEstate
     {
         // properties
         public int Number { get; set; }
+        public string Street { get; set; }
+
+        // lists
+        public List<Entrance> entrances = new List<Entrance>();
+
 
         // constructor
-        public BlockOfFlats(HousingEstate he, int number)
+        public BlockOfFlats(HousingEstate he, int number, string street, int entrancesNumber)
         {
             this.Number = number;
-            he.allBlocksOfFlats.Add(this);
+            this.Street = street;
+            he.blocksOfFlats.Add(this);
+            CreateEntrances(entrancesNumber);
         }
 
-        // vytvoriť metódu, ktorá automaticky vytvorí vchody - zavolať ju v konštruktore
+        // Method for automatic creating entrances
+
+        public void CreateEntrances(int entrancesNumber)
+        {
+            // loop for odd numbers
+            for (int i = 1; i <= entrancesNumber; i+=2)
+            {
+                this.entrances.Add(new Entrance(i, this));
+            }
+
+            // loop for even numbers
+            for (int i = 2; i <= entrancesNumber; i += 2)
+            {
+                this.entrances.Add(new Entrance(i, this));
+            }
+        }
+
     }
 }
