@@ -19,16 +19,18 @@ namespace HousingEstate
             BlockOfFlats bof2 = new BlockOfFlats(he1, 2, "Richardova", 12);
 
             // create flats
-            int[] flatsAreas = { 60, 87, 75, 95, 68, 79, 96, 77, 82, 96, 82, 88,};
-            int[] flatsRoomsNumbers = { 2, 4, 3, 2, 2, 2, 3, 2, 3, 3, 2, 3 };
+            int[] flatsAreas = { 60, 87, 75, 95, 68, 79, 96, 77, 82, 96, 82, 88, 68, 71};
+            int[] flatsRoomsNumbers = { 2, 4, 3, 2, 2, 2, 3, 2, 3, 3, 2, 3, 2, 2 };
 
             foreach (var bof in he1.blocksOfFlats)
             {
-                int i = 0;
                 foreach (var entrance in bof.entrances)
                 {
-                    entrance.flats.Add(new Flat(flatsAreas[i], flatsRoomsNumbers[i]));
-                    i++;
+                    for (int i = 0; i < flatsAreas.Length; i++)
+                    {
+                        entrance.flats.Add(new Flat(flatsAreas[i], flatsRoomsNumbers[i]));
+                    }
+                    
                 }
             }
 
