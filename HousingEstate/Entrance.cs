@@ -14,7 +14,7 @@ namespace HousingEstate
         // CLASS MEMBERS
 
         // flat list
-        public List<Flat> inhabitants = new List<Flat>();
+        public List<Flat> flats = new List<Flat>();
 
         // properties
         public int Number { get; set; }
