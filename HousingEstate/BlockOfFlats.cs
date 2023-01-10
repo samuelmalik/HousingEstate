@@ -51,5 +51,10 @@ namespace HousingEstate
 
         }
 
+        public override string ToString()
+        {
+            return String.Format($"Block of Flats {this.Number} on street {this.Street}");
+        }
+
     }
 }
