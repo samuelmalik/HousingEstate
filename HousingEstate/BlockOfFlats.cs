@@ -30,16 +30,25 @@ namespace HousingEstate
         public void CreateEntrances(int entrancesNumber)
         {
             // loop for odd numbers
-            for (int i = 1; i <= entrancesNumber; i+=2)
+            for (int i = 1; i <= entrancesNumber; i++)
             {
-                this.entrances.Add(new Entrance(i, this));
+                if (i%2 !=0)
+                {
+                    this.entrances.Add(new Entrance(i, this));
+                }
+               
             }
 
             // loop for even numbers
-            for (int i = 2; i <= entrancesNumber; i += 2)
+            for (int i = 2; i <= entrancesNumber; i++)
             {
-                this.entrances.Add(new Entrance(i, this));
+                if (i % 2 == 0)
+                {
+                    this.entrances.Add(new Entrance(i, this));
+                }
+
             }
+
         }
 
     }

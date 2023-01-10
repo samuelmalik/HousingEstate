@@ -14,22 +14,18 @@ namespace HousingEstate
             // create housing estate
             HousingEstate he1 = new HousingEstate("Lunik IX");
 
-            // create blocks of flats and entrances
+            // create blocks of flats
             BlockOfFlats bof1 = new BlockOfFlats(he1, 1, "Jurčova", 12);
-            he1.blocksOfFlats.Add(bof1);
-            BlockOfFlats bof2 = new BlockOfFlats(he1, 2, "Richardova", 15);
-            he1.blocksOfFlats.Add(bof2);
+            BlockOfFlats bof2 = new BlockOfFlats(he1, 2, "Richardova", 12);
+
+            // in each block of flats create entrances
 
 
-            foreach (var entrance in bof1.entrances)
-            {
-                Console.WriteLine(entrance); 
-            }
 
 
             // create flats
 
-            
+
 
             // create people
 
@@ -38,13 +34,14 @@ namespace HousingEstate
             // MENU
 
 
-            // function returning someething like tree structure of all flats and habitants (later can be implemented in Flat class)
-            //foreach (var item in Flat.allFlats)
-            //{
-            //    Console.WriteLine(item);
-            //    Console.WriteLine(item.GetInfoAboutAllInhabitants());
-            //}
-
+            foreach (var bof in he1.blocksOfFlats)
+            {
+                Console.WriteLine(bof.ToString());
+                foreach (var entrance in bof.entrances)
+                {
+                    Console.WriteLine("\t" + entrance);
+                }
+            }
 
         }
     }
