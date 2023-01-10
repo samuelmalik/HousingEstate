@@ -41,11 +41,12 @@ namespace HousingEstate
         public int RomsNumber { get { return roomsNumber; } set { roomsNumber = Math.Abs(value); } }
 
         // constructor
-        public Flat(int area, int roomsNumber)
+        public Flat(int number, int area, int roomsNumber)
         {
             this.area = Math.Abs(area);
             this.roomsNumber = Math.Abs(roomsNumber);
             Flat.allFlats.Add(this);
+            this.number = number;
         }
 
         // methods

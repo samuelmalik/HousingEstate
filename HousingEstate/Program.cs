@@ -28,7 +28,7 @@ namespace HousingEstate
                 {
                     for (int i = 0; i < flatsAreas.Length; i++)
                     {
-                        entrance.flats.Add(new Flat(flatsAreas[i], flatsRoomsNumbers[i]));
+                        entrance.flats.Add(new Flat(i+1, flatsAreas[i], flatsRoomsNumbers[i]));
                     }
                     
                 }
