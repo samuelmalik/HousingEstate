@@ -35,9 +35,19 @@ namespace HousingEstate
             }
 
 
-            // create people
+            // create people and add them to flats
+            new Habitant("Pavel", "Virdzek", 69 ,he1.blocksOfFlats[0].entrances[4].flats[2]);
+            new Habitant("Ján", "Dudešek", 75, he1.blocksOfFlats[0].entrances[4].flats[2]);
+            new Habitant("Stanislav", "Lokaj", 55, he1.blocksOfFlats[1].entrances[1].flats[4]);
+            new Habitant("Peter", "Sovík", 75, he1.blocksOfFlats[1].entrances[4].flats[2]);
+            new Habitant("Peter", "Druska", 38, he1.blocksOfFlats[1].entrances[3].flats[1]);
+            new Habitant("Martin", "Cvinček", 43, he1.blocksOfFlats[0].entrances[4].flats[6]);
+            new Habitant("Ľubomír", "Baránek", 28, he1.blocksOfFlats[0].entrances[4].flats[7]);
+            new Habitant("Ondrej", "Ščamba", 80, he1.blocksOfFlats[1].entrances[8].flats[7]);
+            new Habitant("Milan", "Válek", 68, he1.blocksOfFlats[0].entrances[4].flats[1]);
+            new Habitant("Anna", "Vojtková", 59, he1.blocksOfFlats[0].entrances[1].flats[2]);
+            new Habitant("Jozef", "Uher", 75, he1.blocksOfFlats[0].entrances[1].flats[0]);
 
-            // add people to flats
 
             // MENU
 
@@ -51,6 +61,10 @@ namespace HousingEstate
                     foreach (var flat in entrance.flats)
                     {
                         Console.WriteLine("\t\t" + flat);
+                        foreach (var inhabitant in flat.inhabitants)
+                        {
+                            Console.WriteLine("\t\t\t" + inhabitant);
+                        }
                     }
                 }
             }

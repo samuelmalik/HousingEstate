@@ -24,6 +24,7 @@ namespace HousingEstate
             this.surname = CapitalizeFirstLetter(surname);
             this.age = Math.Abs(age);
             this.flat = flat;
+            flat.inhabitants.Add(this);
             Person.allPeople.Add(this);
         }
 
@@ -40,7 +41,8 @@ namespace HousingEstate
         // ToString() method
         public override string ToString()
         {
-            return String.Format($"{this.name} {this.surname}, {this.age} years old, living in flat {flat.Number}");
+            Console.ForegroundColor = ConsoleColor.Green;
+            return String.Format($"{this.name} {this.surname}, {this.age} years old");
         }
     }
 }

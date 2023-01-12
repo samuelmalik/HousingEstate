@@ -31,6 +31,7 @@ namespace HousingEstate
         // ToString() method
         public override string ToString()
         {
+            Console.ForegroundColor = ConsoleColor.White;
             return String.Format($"Entrance number {this.Number}");
         }
     }

@@ -31,6 +31,8 @@ namespace HousingEstate
         private int number;
         private int area;
         private int roomsNumber;
+        private int capacity = 4;
+        private int currentSpace;
 
         // list of inhabitants
         public List<Person> inhabitants = new List<Person>();
@@ -39,6 +41,7 @@ namespace HousingEstate
         public int Number { get { return number; } }
         public int Area { get { return area; } set { area = Math.Abs(value); } }
         public int RomsNumber { get { return roomsNumber; } set { roomsNumber = Math.Abs(value); } }
+        public int CurrentSpace { get { return currentSpace; } set { currentSpace = value; } }
 
         // constructor
         public Flat(int number, int area, int roomsNumber)
@@ -72,6 +75,7 @@ namespace HousingEstate
         // ToString() method
         public override string ToString()
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
             return String.Format($"Flat number {this.number} with {this.roomsNumber} rooms and total area of {this.area} square meters.");
         }
 
