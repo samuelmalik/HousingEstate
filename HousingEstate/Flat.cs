@@ -75,7 +75,6 @@ namespace HousingEstate
         // ToString() method
         public override string ToString()
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
             return String.Format($"Flat number {this.number} with {this.roomsNumber} rooms and total area of {this.area} square meters.");
         }
 

@@ -53,7 +53,6 @@ namespace HousingEstate
 
         public override string ToString()
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
             return String.Format($"Block of Flats {this.Number} on street {this.Street}");
         }
 

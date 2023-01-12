@@ -54,15 +54,19 @@ namespace HousingEstate
 
             foreach (var bof in he1.blocksOfFlats)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(bof.ToString());
                 foreach (var entrance in bof.entrances)
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("\t" + entrance);
                     foreach (var flat in entrance.flats)
                     {
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("\t\t" + flat);
                         foreach (var inhabitant in flat.inhabitants)
                         {
+                            Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine("\t\t\t" + inhabitant);
                         }
                     }

@@ -41,7 +41,6 @@ namespace HousingEstate
         // ToString() method
         public override string ToString()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
             return String.Format($"{this.name} {this.surname}, {this.age} years old");
         }
     }
